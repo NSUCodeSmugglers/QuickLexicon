@@ -26,7 +26,7 @@ The main menu will also have a word of the day for quick learning an interesting
 7.	Login for Admin and general use
 
 # Authors  
-Sabbir Mollah
-Nazmul Hossain Nihal
-Naimur Abanto
+Sabbir Mollah  
+Nazmul Hossain Nihal  
+Naimur Abanto  
 ---
