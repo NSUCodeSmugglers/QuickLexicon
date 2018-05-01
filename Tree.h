@@ -17,10 +17,10 @@ public:
     void PrintAllWords();
 private:
     void AddWord(string,string);
-    TreeNode Treverse(TreeNode*);
-    TreeNode TreverseAll(TreeNode*);
-    TreeNode TreverseWords(TreeNode*);
-    TreeNode TreverseToDelete(TreeNode*);
+    TreeNode Traverse(TreeNode*);
+    TreeNode TraverseAll(TreeNode*);
+    TreeNode TraverseWords(TreeNode*);
+    TreeNode TraverseToDelete(TreeNode*);
     void Fetch();
 };
 

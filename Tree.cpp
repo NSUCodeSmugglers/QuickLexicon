@@ -801,11 +801,11 @@ void Tree::GetSuggestions(string Word)
     }
 
     count = 0;
-    Treverse(nodePtr);
+    Traverse(nodePtr);
 }
 
 
-TreeNode Tree::Treverse(TreeNode* R)
+TreeNode Tree::Traverse(TreeNode* R)
 {
     TreeNode NullNode;
     if(count == 5){
@@ -817,32 +817,32 @@ TreeNode Tree::Treverse(TreeNode* R)
         } else if(R == NULL){
             return NullNode;
         } else {
-            if(R->a != NULL){Treverse(R->a);}
-            if(R->b != NULL){Treverse(R->b);}
-            if(R->c != NULL){Treverse(R->c);}
-            if(R->d != NULL){Treverse(R->d);}
-            if(R->e != NULL){Treverse(R->e);}
-            if(R->f != NULL){Treverse(R->f);}
-            if(R->g != NULL){Treverse(R->g);}
-            if(R->h != NULL){Treverse(R->h);}
-            if(R->i != NULL){Treverse(R->i);}
-            if(R->j != NULL){Treverse(R->j);}
-            if(R->k != NULL){Treverse(R->k);}
-            if(R->l != NULL){Treverse(R->l);}
-            if(R->m != NULL){Treverse(R->m);}
-            if(R->n != NULL){Treverse(R->n);}
-            if(R->o != NULL){Treverse(R->o);}
-            if(R->p != NULL){Treverse(R->p);}
-            if(R->q != NULL){Treverse(R->q);}
-            if(R->r != NULL){Treverse(R->r);}
-            if(R->s != NULL){Treverse(R->s);}
-            if(R->t != NULL){Treverse(R->t);}
-            if(R->u != NULL){Treverse(R->u);}
-            if(R->v != NULL){Treverse(R->v);}
-            if(R->w != NULL){Treverse(R->w);}
-            if(R->x != NULL){Treverse(R->x);}
-            if(R->y != NULL){Treverse(R->y);}
-            if(R->z != NULL){Treverse(R->z);}
+            if(R->a != NULL){Traverse(R->a);}
+            if(R->b != NULL){Traverse(R->b);}
+            if(R->c != NULL){Traverse(R->c);}
+            if(R->d != NULL){Traverse(R->d);}
+            if(R->e != NULL){Traverse(R->e);}
+            if(R->f != NULL){Traverse(R->f);}
+            if(R->g != NULL){Traverse(R->g);}
+            if(R->h != NULL){Traverse(R->h);}
+            if(R->i != NULL){Traverse(R->i);}
+            if(R->j != NULL){Traverse(R->j);}
+            if(R->k != NULL){Traverse(R->k);}
+            if(R->l != NULL){Traverse(R->l);}
+            if(R->m != NULL){Traverse(R->m);}
+            if(R->n != NULL){Traverse(R->n);}
+            if(R->o != NULL){Traverse(R->o);}
+            if(R->p != NULL){Traverse(R->p);}
+            if(R->q != NULL){Traverse(R->q);}
+            if(R->r != NULL){Traverse(R->r);}
+            if(R->s != NULL){Traverse(R->s);}
+            if(R->t != NULL){Traverse(R->t);}
+            if(R->u != NULL){Traverse(R->u);}
+            if(R->v != NULL){Traverse(R->v);}
+            if(R->w != NULL){Traverse(R->w);}
+            if(R->x != NULL){Traverse(R->x);}
+            if(R->y != NULL){Traverse(R->y);}
+            if(R->z != NULL){Traverse(R->z);}
             return NullNode;
         }
     }
@@ -850,10 +850,10 @@ TreeNode Tree::Treverse(TreeNode* R)
 
 void Tree::PrintAll()
 {
-    TreverseAll(root);
+    TraverseAll(root);
 }
 
-TreeNode Tree::TreverseAll(TreeNode* R)
+TreeNode Tree::TraverseAll(TreeNode* R)
 {
     TreeNode NullNode;
     if(R->definition != ""){
@@ -862,42 +862,42 @@ TreeNode Tree::TreverseAll(TreeNode* R)
     if(R == NULL){
         return NullNode;
     } else {
-        if(R->a != NULL){TreverseAll(R->a);}
-        if(R->b != NULL){TreverseAll(R->b);}
-        if(R->c != NULL){TreverseAll(R->c);}
-        if(R->d != NULL){TreverseAll(R->d);}
-        if(R->e != NULL){TreverseAll(R->e);}
-        if(R->f != NULL){TreverseAll(R->f);}
-        if(R->g != NULL){TreverseAll(R->g);}
-        if(R->h != NULL){TreverseAll(R->h);}
-        if(R->i != NULL){TreverseAll(R->i);}
-        if(R->j != NULL){TreverseAll(R->j);}
-        if(R->k != NULL){TreverseAll(R->k);}
-        if(R->l != NULL){TreverseAll(R->l);}
-        if(R->m != NULL){TreverseAll(R->m);}
-        if(R->n != NULL){TreverseAll(R->n);}
-        if(R->o != NULL){TreverseAll(R->o);}
-        if(R->p != NULL){TreverseAll(R->p);}
-        if(R->q != NULL){TreverseAll(R->q);}
-        if(R->r != NULL){TreverseAll(R->r);}
-        if(R->s != NULL){TreverseAll(R->s);}
-        if(R->t != NULL){TreverseAll(R->t);}
-        if(R->u != NULL){TreverseAll(R->u);}
-        if(R->v != NULL){TreverseAll(R->v);}
-        if(R->w != NULL){TreverseAll(R->w);}
-        if(R->x != NULL){TreverseAll(R->x);}
-        if(R->y != NULL){TreverseAll(R->y);}
-        if(R->z != NULL){TreverseAll(R->z);}
+        if(R->a != NULL){TraverseAll(R->a);}
+        if(R->b != NULL){TraverseAll(R->b);}
+        if(R->c != NULL){TraverseAll(R->c);}
+        if(R->d != NULL){TraverseAll(R->d);}
+        if(R->e != NULL){TraverseAll(R->e);}
+        if(R->f != NULL){TraverseAll(R->f);}
+        if(R->g != NULL){TraverseAll(R->g);}
+        if(R->h != NULL){TraverseAll(R->h);}
+        if(R->i != NULL){TraverseAll(R->i);}
+        if(R->j != NULL){TraverseAll(R->j);}
+        if(R->k != NULL){TraverseAll(R->k);}
+        if(R->l != NULL){TraverseAll(R->l);}
+        if(R->m != NULL){TraverseAll(R->m);}
+        if(R->n != NULL){TraverseAll(R->n);}
+        if(R->o != NULL){TraverseAll(R->o);}
+        if(R->p != NULL){TraverseAll(R->p);}
+        if(R->q != NULL){TraverseAll(R->q);}
+        if(R->r != NULL){TraverseAll(R->r);}
+        if(R->s != NULL){TraverseAll(R->s);}
+        if(R->t != NULL){TraverseAll(R->t);}
+        if(R->u != NULL){TraverseAll(R->u);}
+        if(R->v != NULL){TraverseAll(R->v);}
+        if(R->w != NULL){TraverseAll(R->w);}
+        if(R->x != NULL){TraverseAll(R->x);}
+        if(R->y != NULL){TraverseAll(R->y);}
+        if(R->z != NULL){TraverseAll(R->z);}
         return NullNode;
     }
 }
 
 void Tree::PrintAllWords()
 {
-    TreverseWords(root);
+    TraverseWords(root);
 }
 
-TreeNode Tree::TreverseWords(TreeNode* R)
+TreeNode Tree::TraverseWords(TreeNode* R)
 {
     TreeNode NullNode;
     if(R->definition != ""){
@@ -906,32 +906,32 @@ TreeNode Tree::TreverseWords(TreeNode* R)
     if(R == NULL){
         return NullNode;
     } else {
-        if(R->a != NULL){TreverseWords(R->a);}
-        if(R->b != NULL){TreverseWords(R->b);}
-        if(R->c != NULL){TreverseWords(R->c);}
-        if(R->d != NULL){TreverseWords(R->d);}
-        if(R->e != NULL){TreverseWords(R->e);}
-        if(R->f != NULL){TreverseWords(R->f);}
-        if(R->g != NULL){TreverseWords(R->g);}
-        if(R->h != NULL){TreverseWords(R->h);}
-        if(R->i != NULL){TreverseWords(R->i);}
-        if(R->j != NULL){TreverseWords(R->j);}
-        if(R->k != NULL){TreverseWords(R->k);}
-        if(R->l != NULL){TreverseWords(R->l);}
-        if(R->m != NULL){TreverseWords(R->m);}
-        if(R->n != NULL){TreverseWords(R->n);}
-        if(R->o != NULL){TreverseWords(R->o);}
-        if(R->p != NULL){TreverseWords(R->p);}
-        if(R->q != NULL){TreverseWords(R->q);}
-        if(R->r != NULL){TreverseWords(R->r);}
-        if(R->s != NULL){TreverseWords(R->s);}
-        if(R->t != NULL){TreverseWords(R->t);}
-        if(R->u != NULL){TreverseWords(R->u);}
-        if(R->v != NULL){TreverseWords(R->v);}
-        if(R->w != NULL){TreverseWords(R->w);}
-        if(R->x != NULL){TreverseWords(R->x);}
-        if(R->y != NULL){TreverseWords(R->y);}
-        if(R->z != NULL){TreverseWords(R->z);}
+        if(R->a != NULL){TraverseWords(R->a);}
+        if(R->b != NULL){TraverseWords(R->b);}
+        if(R->c != NULL){TraverseWords(R->c);}
+        if(R->d != NULL){TraverseWords(R->d);}
+        if(R->e != NULL){TraverseWords(R->e);}
+        if(R->f != NULL){TraverseWords(R->f);}
+        if(R->g != NULL){TraverseWords(R->g);}
+        if(R->h != NULL){TraverseWords(R->h);}
+        if(R->i != NULL){TraverseWords(R->i);}
+        if(R->j != NULL){TraverseWords(R->j);}
+        if(R->k != NULL){TraverseWords(R->k);}
+        if(R->l != NULL){TraverseWords(R->l);}
+        if(R->m != NULL){TraverseWords(R->m);}
+        if(R->n != NULL){TraverseWords(R->n);}
+        if(R->o != NULL){TraverseWords(R->o);}
+        if(R->p != NULL){TraverseWords(R->p);}
+        if(R->q != NULL){TraverseWords(R->q);}
+        if(R->r != NULL){TraverseWords(R->r);}
+        if(R->s != NULL){TraverseWords(R->s);}
+        if(R->t != NULL){TraverseWords(R->t);}
+        if(R->u != NULL){TraverseWords(R->u);}
+        if(R->v != NULL){TraverseWords(R->v);}
+        if(R->w != NULL){TraverseWords(R->w);}
+        if(R->x != NULL){TraverseWords(R->x);}
+        if(R->y != NULL){TraverseWords(R->y);}
+        if(R->z != NULL){TraverseWords(R->z);}
         return NullNode;
     }
 }
@@ -958,42 +958,42 @@ void Tree::DeleteWord(string Word)
 
 Tree::~Tree()
 {
-    TreverseToDelete(root);
+    TraverseToDelete(root);
 }
 
-TreeNode Tree::TreverseToDelete(TreeNode* R)
+TreeNode Tree::TraverseToDelete(TreeNode* R)
 {
     TreeNode NullNode;
 
     if(R == NULL){
         return NullNode;
     } else {
-        if(R->a != NULL){TreverseToDelete(R->a);}
-        if(R->b != NULL){TreverseToDelete(R->b);}
-        if(R->c != NULL){TreverseToDelete(R->c);}
-        if(R->d != NULL){TreverseToDelete(R->d);}
-        if(R->e != NULL){TreverseToDelete(R->e);}
-        if(R->f != NULL){TreverseToDelete(R->f);}
-        if(R->g != NULL){TreverseToDelete(R->g);}
-        if(R->h != NULL){TreverseToDelete(R->h);}
-        if(R->i != NULL){TreverseToDelete(R->i);}
-        if(R->j != NULL){TreverseToDelete(R->j);}
-        if(R->k != NULL){TreverseToDelete(R->k);}
-        if(R->l != NULL){TreverseToDelete(R->l);}
-        if(R->m != NULL){TreverseToDelete(R->m);}
-        if(R->n != NULL){TreverseToDelete(R->n);}
-        if(R->o != NULL){TreverseToDelete(R->o);}
-        if(R->p != NULL){TreverseToDelete(R->p);}
-        if(R->q != NULL){TreverseToDelete(R->q);}
-        if(R->r != NULL){TreverseToDelete(R->r);}
-        if(R->s != NULL){TreverseToDelete(R->s);}
-        if(R->t != NULL){TreverseToDelete(R->t);}
-        if(R->u != NULL){TreverseToDelete(R->u);}
-        if(R->v != NULL){TreverseToDelete(R->v);}
-        if(R->w != NULL){TreverseToDelete(R->w);}
-        if(R->x != NULL){TreverseToDelete(R->x);}
-        if(R->y != NULL){TreverseToDelete(R->y);}
-        if(R->z != NULL){TreverseToDelete(R->z);}
+        if(R->a != NULL){TraverseToDelete(R->a);}
+        if(R->b != NULL){TraverseToDelete(R->b);}
+        if(R->c != NULL){TraverseToDelete(R->c);}
+        if(R->d != NULL){TraverseToDelete(R->d);}
+        if(R->e != NULL){TraverseToDelete(R->e);}
+        if(R->f != NULL){TraverseToDelete(R->f);}
+        if(R->g != NULL){TraverseToDelete(R->g);}
+        if(R->h != NULL){TraverseToDelete(R->h);}
+        if(R->i != NULL){TraverseToDelete(R->i);}
+        if(R->j != NULL){TraverseToDelete(R->j);}
+        if(R->k != NULL){TraverseToDelete(R->k);}
+        if(R->l != NULL){TraverseToDelete(R->l);}
+        if(R->m != NULL){TraverseToDelete(R->m);}
+        if(R->n != NULL){TraverseToDelete(R->n);}
+        if(R->o != NULL){TraverseToDelete(R->o);}
+        if(R->p != NULL){TraverseToDelete(R->p);}
+        if(R->q != NULL){TraverseToDelete(R->q);}
+        if(R->r != NULL){TraverseToDelete(R->r);}
+        if(R->s != NULL){TraverseToDelete(R->s);}
+        if(R->t != NULL){TraverseToDelete(R->t);}
+        if(R->u != NULL){TraverseToDelete(R->u);}
+        if(R->v != NULL){TraverseToDelete(R->v);}
+        if(R->w != NULL){TraverseToDelete(R->w);}
+        if(R->x != NULL){TraverseToDelete(R->x);}
+        if(R->y != NULL){TraverseToDelete(R->y);}
+        if(R->z != NULL){TraverseToDelete(R->z);}
         delete R;
         R = NULL;
         return NullNode;
