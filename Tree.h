@@ -21,7 +21,7 @@ private:
     TreeNode TraverseAll(TreeNode*);
     TreeNode TraverseWords(TreeNode*);
     TreeNode TraverseToDelete(TreeNode*);
-    void Fetch();
+    void Fetch(string);
 };
 
 #endif // TREE_H_INCLUDED
