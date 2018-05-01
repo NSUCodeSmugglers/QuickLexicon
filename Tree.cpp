@@ -249,8 +249,13 @@ void Tree::AddWord(string Word,string Def)
         }
     }
 
-    nodePtr->definition = Def;
-    nodePtr->word = Original;
+    if(Def=="++"){
+        nodePtr->definition = Def;
+        //"++" works as a flag to delete the node
+    }else{
+        nodePtr->definition += "\n\t" + Def;
+        //If Word exists already in the tree, the definition will be appended
+    }
 }
 
 bool Tree::Search(string Word, string& Def, string& original)
