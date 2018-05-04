@@ -4,6 +4,7 @@
 Tree::Tree()
 {
     Fetch();
+    //Reads words from files and brings them into the tree
 }
 
 void Tree::AddWord(string Word,string Def)
@@ -256,11 +257,13 @@ void Tree::AddWord(string Word,string Def)
         nodePtr->definition += "\n\t" + Def;
         //If Word exists already in the tree, the definition will be appended
     }
+    nodePtr->word = Original;
 }
 
 bool Tree::Search(string Word, string& Def, string& original)
 {
-    transform(Word.begin(), Word.end(), Word.begin(),(int (*)(int))tolower); // Converting word to lowercase string
+    transform(Word.begin(), Word.end(), Word.begin(),(int (*)(int))tolower); 
+    // Converting word to lowercase string
 
     TreeNode *nodePtr = root;
 
@@ -509,6 +512,8 @@ bool Tree::Search(string Word, string& Def, string& original)
 
     if(nodePtr->definition == "" || nodePtr->definition == "++"){
         return false;
+        //when definition=="" it means that even though the node is not NULL
+        //it has no meaning/definition
     } else {
         Def = nodePtr->definition;
         original = nodePtr->word;
@@ -860,6 +865,9 @@ void Tree::PrintAll()
 
 TreeNode Tree::TraverseAll(TreeNode* R)
 {
+    //This function prints all the words with definition
+    //Called from PrintAll() function
+    
     TreeNode NullNode;
     if(R->definition != ""){
         cout << R->word << " - " << R->definition << endl;
