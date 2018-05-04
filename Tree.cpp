@@ -560,14 +560,8 @@ void Tree::Fetch()
 }
 
 
-void Tree::GetSuggestions(string Word)
+void Tree::GetSuggestions(string Word, SortedList<string>& suggestions)
 {
-    suggestions[0] = "";
-    suggestions[1] = "";
-    suggestions[2] = "";
-    suggestions[3] = "";
-    suggestions[4] = "";
-
     transform(Word.begin(), Word.end(), Word.begin(),(int (*)(int))tolower); // Converting word to lowercase string
 
     TreeNode *nodePtr = root;
@@ -809,50 +803,48 @@ void Tree::GetSuggestions(string Word)
             }
         }
     }
-
-    count = 0;
-    Traverse(nodePtr);
+    //nodePtr is now pointing to the word
+    Traverse(nodePtr, suggestions);
 }
 
 
-TreeNode Tree::Traverse(TreeNode* R)
+TreeNode Tree::Traverse(TreeNode* R, SortedList<string>& suggestions)
 {
     TreeNode NullNode;
-    if(count == 5){
+    if( suggestions.IsFull() ){
         return NullNode;
     } else {
         if(R->definition != ""){
-            suggestions[count] = R->word;
-            count++;
+            suggestions.InsertItem(R->word);
         } else if(R == NULL){
             return NullNode;
         } else {
-            if(R->a != NULL){Traverse(R->a);}
-            if(R->b != NULL){Traverse(R->b);}
-            if(R->c != NULL){Traverse(R->c);}
-            if(R->d != NULL){Traverse(R->d);}
-            if(R->e != NULL){Traverse(R->e);}
-            if(R->f != NULL){Traverse(R->f);}
-            if(R->g != NULL){Traverse(R->g);}
-            if(R->h != NULL){Traverse(R->h);}
-            if(R->i != NULL){Traverse(R->i);}
-            if(R->j != NULL){Traverse(R->j);}
-            if(R->k != NULL){Traverse(R->k);}
-            if(R->l != NULL){Traverse(R->l);}
-            if(R->m != NULL){Traverse(R->m);}
-            if(R->n != NULL){Traverse(R->n);}
-            if(R->o != NULL){Traverse(R->o);}
-            if(R->p != NULL){Traverse(R->p);}
-            if(R->q != NULL){Traverse(R->q);}
-            if(R->r != NULL){Traverse(R->r);}
-            if(R->s != NULL){Traverse(R->s);}
-            if(R->t != NULL){Traverse(R->t);}
-            if(R->u != NULL){Traverse(R->u);}
-            if(R->v != NULL){Traverse(R->v);}
-            if(R->w != NULL){Traverse(R->w);}
-            if(R->x != NULL){Traverse(R->x);}
-            if(R->y != NULL){Traverse(R->y);}
-            if(R->z != NULL){Traverse(R->z);}
+            if(R->a != NULL){Traverse(R->a,suggestions);}
+            if(R->b != NULL){Traverse(R->b,suggestions);}
+            if(R->c != NULL){Traverse(R->c,suggestions);}
+            if(R->d != NULL){Traverse(R->d,suggestions);}
+            if(R->e != NULL){Traverse(R->e,suggestions);}
+            if(R->f != NULL){Traverse(R->f,suggestions);}
+            if(R->g != NULL){Traverse(R->g,suggestions);}
+            if(R->h != NULL){Traverse(R->h,suggestions);}
+            if(R->i != NULL){Traverse(R->i,suggestions);}
+            if(R->j != NULL){Traverse(R->j,suggestions);}
+            if(R->k != NULL){Traverse(R->k,suggestions);}
+            if(R->l != NULL){Traverse(R->l,suggestions);}
+            if(R->m != NULL){Traverse(R->m,suggestions);}
+            if(R->n != NULL){Traverse(R->n,suggestions);}
+            if(R->o != NULL){Traverse(R->o,suggestions);}
+            if(R->p != NULL){Traverse(R->p,suggestions);}
+            if(R->q != NULL){Traverse(R->q,suggestions);}
+            if(R->r != NULL){Traverse(R->r,suggestions);}
+            if(R->s != NULL){Traverse(R->s,suggestions);}
+            if(R->t != NULL){Traverse(R->t,suggestions);}
+            if(R->u != NULL){Traverse(R->u,suggestions);}
+            if(R->v != NULL){Traverse(R->v,suggestions);}
+            if(R->w != NULL){Traverse(R->w,suggestions);}
+            if(R->x != NULL){Traverse(R->x,suggestions);}
+            if(R->y != NULL){Traverse(R->y,suggestions);}
+            if(R->z != NULL){Traverse(R->z,suggestions);}
             return NullNode;
         }
     }

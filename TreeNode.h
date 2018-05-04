@@ -3,8 +3,9 @@
 #include <string>
 #include <algorithm>
 #include <fstream>
-#include <string.h>
 #include<iostream>
+#include<string.h> //For strtok
+
 
 using namespace std;
 
