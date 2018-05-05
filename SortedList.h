@@ -17,6 +17,7 @@ private:
 	int currentPos;
 	
 public:
+	SortedList();
 	SortedList(int);
 	~SortedList();
 	void InsertItem(T);
@@ -25,6 +26,7 @@ public:
 	bool IsFull();
 	void PrintAll();
 	int GetLength();
+	void DeleteAll();
 };
 
 
@@ -35,6 +37,14 @@ public:
 template <class T>
 SortedList<T>::SortedList(int size) {
 	maxSize = size;
+	data = new T[maxSize];
+	length = 0;
+	currentPos = -1;
+}
+
+template <class T>
+SortedList<T>::SortedList() {
+	maxSize = 3;
 	data = new T[maxSize];
 	length = 0;
 	currentPos = -1;
@@ -102,6 +112,14 @@ void SortedList<T>::PrintAll() {
 template <class T>
 int SortedList<T>::GetLength() {
 	return length;
+}
+
+template <class T>
+void SortedList<T>::DeleteAll() {
+	delete[] data;
+	data = new T[maxSize];
+	length = 0;
+	currentPos = -1;
 }
 
 
