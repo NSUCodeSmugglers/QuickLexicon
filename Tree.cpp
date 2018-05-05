@@ -3,8 +3,33 @@
 
 Tree::Tree()
 {
-    Fetch();
-    //Reads words from files and brings them into the tree
+    Fetch("data/a.lxc");
+    Fetch("data/b.lxc");
+    Fetch("data/c.lxc");
+    Fetch("data/d.lxc");
+    Fetch("data/e.lxc");
+    Fetch("data/f.lxc");
+    Fetch("data/g.lxc");
+    Fetch("data/h.lxc");
+    Fetch("data/i.lxc");
+    Fetch("data/j.lxc");
+    Fetch("data/k.lxc");
+    Fetch("data/l.lxc");
+    Fetch("data/m.lxc");
+    Fetch("data/n.lxc");
+    Fetch("data/o.lxc");
+    Fetch("data/p.lxc");
+    Fetch("data/q.lxc");
+    Fetch("data/r.lxc");
+    Fetch("data/s.lxc");
+    Fetch("data/t.lxc");
+    Fetch("data/u.lxc");
+    Fetch("data/v.lxc");
+    Fetch("data/w.lxc");
+    Fetch("data/x.lxc");
+    Fetch("data/y.lxc");
+    Fetch("data/z.lxc");
+    Fetch("data/updates.lxc");
 }
 
 void Tree::AddWord(string Word,string Def)
@@ -252,9 +277,15 @@ void Tree::AddWord(string Word,string Def)
 
     if(Def=="++"){
         nodePtr->definition = Def;
+        nodePtr->word = "";
         //"++" works as a flag to delete the node
     }else{
-        nodePtr->definition += "\n\t" + Def;
+        if(nodePtr->definition == "" || nodePtr->definition == "++"){
+            nodePtr->definition = "\t" +  Def;
+            nodePtr->word = Original;
+        } else {
+            nodePtr->definition += "\n\t" + Def;
+        }
         //If Word exists already in the tree, the definition will be appended
     }
     nodePtr->word = Original;
@@ -522,9 +553,10 @@ bool Tree::Search(string Word, string& Def, string& original)
 
 }
 
-void Tree::Fetch()
+void Tree::Fetch(string FileName)
 {
-    ifstream myfile("database.txt");
+    char *F = &FileName[0u];
+    ifstream myfile(F);
     string line, word, def;
 
     if (myfile.is_open()){
@@ -534,7 +566,6 @@ void Tree::Fetch()
             char* ptr = strtok(linepointer, " ");
             word = ptr;
             int i = 0;
-
             while (ptr != NULL){
                 if(i == 0){
                     word = ptr;
@@ -944,7 +975,7 @@ TreeNode Tree::TraverseWords(TreeNode* R)
 void Tree::InsertWord(string Word, string Def)
 {
     ofstream dataFile;
-    dataFile.open ("database.txt", std::ofstream::out | std::ofstream::app);
+    dataFile.open ("data/updates.lxc", std::ofstream::out | std::ofstream::app);
     if(dataFile.is_open()){
         dataFile << endl;
         dataFile << Word;
