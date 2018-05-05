@@ -7,36 +7,21 @@
 using namespace std;
 
 void setUpConsole();
+void mainMenu(Tree&);
 void displayMainMenu();
-void searchPage();
+void searchPage(Tree&);
 void bookMarkPage();
-void handleCommandLineArg(string, Tree);
+void handleCommandLineArg(string, Tree&);
 
 int main(int argc, char *argv[]){
-    int choice;
     Tree dictionary;
 
     if(argc==2){
        string word(argv[1]);
        handleCommandLineArg(word,dictionary); 
     }
-    
     setUpConsole();
-    displayMainMenu();
-    do{
-        cin>>choice;
-        switch(choice){
-            case 0:
-                exit(1);
-            case 1:
-                searchPage();
-                break;
-            case 3:
-                bookMarkPage();
-                break;
-        }
-    }while( !( choice==0 || choice==1 || choice==2 ));
-    getchar();
+    mainMenu(dictionary); 
 }
 
 void setUpConsole(){
@@ -44,6 +29,25 @@ void setUpConsole(){
     RECT r;
     GetWindowRect(console, &r);
     MoveWindow(console,r.left, r.top,600,600, true);
+}
+
+void mainMenu(Tree& dictionary){
+    int choice;
+    displayMainMenu();
+    do{
+        cin>>choice;
+        switch(choice){
+            case 0:
+                exit(1);
+            case 1:
+                searchPage(dictionary);
+                break;
+            case 2:
+                bookMarkPage();
+                break;
+        }
+    }while( !( choice==0 || choice==1 || choice==2 ));
+    getchar();
 }
 
 void displayMainMenu(){
@@ -60,11 +64,11 @@ void bookMarkPage(){
     cout<<"Leaving it to Ubuntu";
 }
 
-void searchPage(){
+void searchPage(Tree& dictionary){
     cout<<"search"<<endl;
 }
 
-void handleCommandLineArg(string word, Tree dictionary){
+void handleCommandLineArg(string word, Tree& dictionary){
     int choice;
     string original, definition;
     if(dictionary.Search(word,definition,original)){
