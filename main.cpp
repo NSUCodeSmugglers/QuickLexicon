@@ -80,7 +80,7 @@ void searchPage(Tree& dictionary){
     while(1){
         input = getche();
         switch(input){
-            case '\n':
+            case 13:
                 //ENTER
                 searchResult(dictionary, searchWord);
                 break;
