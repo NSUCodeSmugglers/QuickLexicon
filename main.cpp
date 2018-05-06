@@ -143,7 +143,16 @@ void searchResult(Tree& dictionary, string searchWord){
 void displaySuggestions(SortedList<string> suggestionList){
     int x,y;
     getCursorXY(x,y);
+
+    int tempx, tempy;
     cout<<endl<<endl<<"\t\t";
+    getCursorXY(tempx,tempy);
+    for(int i=0; i<60; i++){
+        //To clear that line
+        cout<<" ";
+    }
+    curPos(tempx,tempy);
+
     for(int i=0; i<suggestionList.GetLength(); i++){
         string suggestion;
         cout<<"["<<i+1<<"] ";
