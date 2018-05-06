@@ -72,39 +72,48 @@ void searchPage(Tree& dictionary){
     char input;
     SortedList<string> suggestionList;
     string searchWord = "";
+    string temp;
     system("cls");
 
     cout<<endl<<endl<<"\t\t";
     cout<<"Enter word to search: ";
     while(1){
         input = getche();
-        if(input == 13){
-            //When ENTER is pressed
-            searchResult(dictionary, searchWord);
-        }
-        if(input == '1'){
-            string temp;
-            suggestionList.GetNextItem(temp);
-            searchResult(dictionary, temp);
-        }
-
-        if(input == '2'){
-            string temp;
-            suggestionList.GetNextItem(temp);
-            suggestionList.GetNextItem(temp);
-            searchResult(dictionary, temp);
-        }
-
-        if(input == '3'){
-            string temp;
-            suggestionList.GetNextItem(temp);
-            suggestionList.GetNextItem(temp);
-            suggestionList.GetNextItem(temp);
-            searchResult(dictionary, temp);
+        switch(input){
+            case '\n':
+                //ENTER
+                searchResult(dictionary, searchWord);
+                break;
+            case '1':
+                suggestionList.GetNextItem(temp);
+                searchResult(dictionary, temp);
+                break;
+            case '2':
+                suggestionList.GetNextItem(temp);
+                suggestionList.GetNextItem(temp);
+                searchResult(dictionary, temp);
+                break;
+            case '3':
+                suggestionList.GetNextItem(temp);
+                suggestionList.GetNextItem(temp);
+                suggestionList.GetNextItem(temp);
+                searchResult(dictionary, temp);
+                break;
+            case '\b':
+                if(searchWord.size()>0){
+                    searchWord = searchWord.substr(0, searchWord.size()-1);
+                    cout<<" \b";
+                }else{
+                    cout<<" ";
+                }
+                break;
         }
         
+        
         suggestionList.DeleteAll();
-        searchWord = searchWord+input;
+        if(input!='\b'){
+            searchWord = searchWord+input;
+        }
         dictionary.GetSuggestions(searchWord, suggestionList);
 
         if(searchWord.size()>=3){
