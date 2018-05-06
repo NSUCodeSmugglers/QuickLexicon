@@ -1,6 +1,5 @@
 #include<iostream>
 #include<string>
-#include<thread>
 #include<windows.h>
 #include<conio.h>
 #include"Tree.h"
