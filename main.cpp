@@ -8,6 +8,8 @@ using namespace std;
 
 void setUpConsole();
 void mainMenu(Tree&);
+void addNewWord(Tree&);
+void deleteWord(Tree&);
 void displayMainMenu();
 void searchPage(Tree&);
 void searchResult(Tree&, string);
@@ -15,6 +17,7 @@ void displaySuggestions(SortedList<string>);
 void getCursorXY(int&, int&);
 void curPos(int,int);
 void bookMarkPage();
+void saveBookMark(string, string, string, string);
 void handleCommandLineArg(string, Tree&);
 
 int main(int argc, char *argv[]){
@@ -49,6 +52,13 @@ void mainMenu(Tree& dictionary){
             case 2:
                 bookMarkPage();
                 break;
+            case 3:
+                addNewWord(dictionary);
+                break;
+            case 4:
+                deleteWord(dictionary);
+                break;
+
         }
     }while( !( choice==0 || choice==1 || choice==2 ));
     getchar();
@@ -61,11 +71,41 @@ void displayMainMenu(){
     cout<<"\t\t\t._._._._._._.\n\n";
     cout<<"\t\t[1] Search a word\n";
     cout<<"\t\t[2] See Bookmarked words\n";
-    cout<<"\t\t[3] Exit the program\n\t\t";
+    cout<<"\t\t[3] Add a new Word\n";
+    cout<<"\t\t[4] Delete a Word\n";
+    cout<<"\t\t[0] Exit the program\n\t\t";
+}
+
+void addNewWord(Tree& dictionary){
+    system("cls");
+    string newWord, newDef;
+    cout<<endl<<endl<<"\t\t";
+    getchar();
+    cout<<"Isert new word: ";
+    getline(cin, newWord);
+    cout<<endl<<"Insert the definition: ";
+    getline(cin, newDef);
+    dictionary.InsertWord(newWord, newDef);
+    mainMenu(dictionary);
+}
+
+void deleteWord(Tree& dictionary){
+    system("cls");
+    string deleteWord;
+    cout<<endl<<endl<<"\t\t";
+    getchar();
+    cout<<"Isert word to delete: ";
+    getline(cin, deleteWord);
+    dictionary.DeleteWord(deleteWord);
+    mainMenu(dictionary);
 }
 
 void bookMarkPage(){
     cout<<"Leaving it to Ubuntu";
+}
+
+void saveBookMark(string userName, string password, string word, string definition){
+
 }
 
 void searchPage(Tree& dictionary){
@@ -137,8 +177,17 @@ void searchResult(Tree& dictionary, string searchWord){
         cout<<"No results for "<< searchWord <<endl;
     }
     cout<<endl<<"\t\t"<<"[1] Main Menu\t";
-    cout<<"[0] Exit"<<endl;;
+    cout<<"[2] Bookmark Word"<<endl;
+    cout<<endl<<"\t\t"<<"[3] Search\t";
+    cout<<"[4] Exit"<<endl;
     do{
+        cin>>choice;
+        if(choice==1){
+            mainMenu(dictionary);
+        }
+        if(choice==0){
+            exit(1);
+        }
         cin>>choice;
         if(choice==1){
             mainMenu(dictionary);
