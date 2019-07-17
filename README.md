@@ -28,5 +28,4 @@ The main menu will also have a word of the day for quick learning an interesting
 # Authors  
 Sabbir Mollah  
 Nazmul Hossain Nihal  
-Naimur Abanto  
 ---
