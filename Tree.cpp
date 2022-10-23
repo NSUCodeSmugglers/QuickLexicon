@@ -879,6 +879,8 @@ TreeNode Tree::Traverse(TreeNode* R, SortedList<string>& suggestions)
             return NullNode;
         }
     }
+
+    return NullNode;
 }
 
 void Tree::PrintAll()
